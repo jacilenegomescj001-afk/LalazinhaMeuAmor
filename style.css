@@ -1,0 +1,107 @@
+body{margin:0;background:#090909;color:#fff;font-family:Arial}#overlay{position:fixed;inset:0;background:#000;display:flex;justify-content:center;align-items:center}.box{background:#1b0000;padding:30px;border-radius:15px;text-align:center}input{padding:10px}button{padding:10px 20px;margin-top:10px;background:#b30021;color:#fff;border:none;border-radius:8px}.hide{display:none}.hero{height:100vh;background:url("imagens/capa.jpg") center/cover}.shade{height:100%;background:rgba(0,0,0,.6);display:flex;flex-direction:column;justify-content:center;align-items:center}.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:20px}.gal img{width:100%;height:180px;object-fit:cover;border-radius:10px}section{padding:30px}.musica{
+    width:90%;
+    max-width:600px;
+    margin:50px auto;
+    padding:25px;
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+}
+
+.musica audio{
+    width:100%;
+    margin-top:15px;
+}/* ===== Fundo romântico ===== */
+body{
+    margin:0;
+    color:#fff;
+    font-family:Arial;
+    background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("imagens/fundo-romantico.jpg") center center/cover fixed;
+    overflow-x:hidden;
+}
+
+/* ===== Corações caindo ===== */
+body::before{
+    content:"❤️ 💕 ❤️ 💖 💗 ❤️ 💘 💞";
+    position:fixed;
+    left:0;
+    top:-100%;
+    width:100%;
+    height:200%;
+    font-size:28px;
+    white-space:pre;
+    line-height:120px;
+    opacity:.18;
+    pointer-events:none;
+    animation:coracoes 20s linear infinite;
+    z-index:9999;
+}
+
+@keyframes coracoes{
+    from{
+        transform:translateY(-50%);
+    }
+    to{
+        transform:translateY(50%);
+    }
+}/*==========================
+    CORAÇÕES PREMIUM
+==========================*/
+
+#heart-container{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:9999;
+}
+
+.heart{
+    position:absolute;
+    width:25px;
+    height:25px;
+    transform:rotate(45deg);
+    animation-name:fall,sway;
+    animation-timing-function:linear,ease-in-out;
+    animation-iteration-count:infinite,infinite;
+    opacity:.85;
+    filter:drop-shadow(0 0 8px rgba(255,70,120,.8));
+}
+
+.heart::before,
+.heart::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:inherit;
+    border-radius:50%;
+}
+
+.heart::before{
+    top:-50%;
+    left:0;
+}
+
+.heart::after{
+    left:-50%;
+    top:0;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-120px) rotate(45deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(405deg);
+    }
+}
+
+@keyframes sway{
+    0%{margin-left:-20px;}
+    50%{margin-left:20px;}
+    100%{margin-left:-20px;}
+}
